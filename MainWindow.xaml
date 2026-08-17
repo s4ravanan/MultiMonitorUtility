@@ -1,0 +1,16 @@
+<Window x:Class="MultiMonitorUtility.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="MultiMonitor Utility" Width="760" Height="620" MinWidth="600" MinHeight="420" WindowStartupLocation="CenterScreen" Closing="OnClosing">
+    <Grid Margin="24">
+        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+        <StackPanel><TextBlock Text="MultiMonitor Utility" FontSize="28" FontWeight="SemiBold"/><TextBlock Text="Configure a fullscreen screen-saver preview for each display. Windows still owns the secure lock screen." Margin="0,6,0,18" TextWrapping="Wrap" Opacity="0.72"/></StackPanel>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <ItemsControl x:Name="MonitorList"><ItemsControl.ItemTemplate><DataTemplate>
+                <Grid Margin="0,0,0,12"><Grid.ColumnDefinitions><ColumnDefinition Width="130"/><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding Name}" VerticalAlignment="Center" FontWeight="SemiBold"/>
+                    <TextBox Grid.Column="1" Text="{Binding ImagePath, UpdateSourceTrigger=PropertyChanged}" Margin="8,0" VerticalContentAlignment="Center"/>
+                    <Button Grid.Column="2" Content="Browse" Padding="14,6" Click="BrowseImage" Tag="{Binding}"/>
+                </Grid>
+            </DataTemplate></ItemsControl.ItemTemplate></ItemsControl>
+        </ScrollViewer>
+        <StackPanel Grid.Row="2" Margin="0,18,0,0"><CheckBox x:Name="ActivateOnTimeout" Content="Activate after the Windows screen-saver timeout"/><StackPanel Orientation="Horizontal" Margin="0,16,0,0"><Button Content="Test Lock Screen" Padding="18,9" Click="TestLockScreen"/><Button Content="Save" Padding="18,9" Margin="10,0,0,0" Click="SaveSettings"/><TextBlock x:Name="StatusText" Margin="16,0,0,0" VerticalAlignment="Center" Opacity="0.72"/></StackPanel></StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,63 @@
+# Build output
+bin/
+obj/
+[Dd]ebug*/
+[Rr]elease*/
+x64/
+x86/
+arm64/
+artifacts/
+
+# Visual Studio / MSBuild
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.pdb
+*.opendb
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains Rider / ReSharper
+.idea/
+*.sln.iml
+*.DotSettings.user
+
+# NuGet and local package caches
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Test and coverage output
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Local publish output
+publish/
+*.publishsettings
+
+# Generated WPF files
+*.g.cs
+*.g.i.cs
+*.baml
